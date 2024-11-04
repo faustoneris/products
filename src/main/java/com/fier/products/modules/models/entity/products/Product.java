@@ -1,4 +1,4 @@
-package com.fier.products.modules.models.entity;
+package com.fier.products.modules.models.entity.products;
 
 import java.util.List;
 import java.util.UUID;

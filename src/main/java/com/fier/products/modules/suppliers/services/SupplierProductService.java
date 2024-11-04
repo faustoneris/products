@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.fier.products.modules.models.entity.Product;
+import com.fier.products.modules.models.entity.products.Product;
 import com.fier.products.modules.suppliers.repositories.SupplierProductRepository;
 
 @Service

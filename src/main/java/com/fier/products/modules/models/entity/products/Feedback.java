@@ -1,4 +1,4 @@
-package com.fier.products.modules.models.entity;
+package com.fier.products.modules.models.entity.products;
 
 public class Feedback {
     private int avaliationLevel;

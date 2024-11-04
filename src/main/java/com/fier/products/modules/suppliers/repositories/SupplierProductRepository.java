@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 
-import com.fier.products.modules.models.entity.Product;
+import com.fier.products.modules.models.entity.products.Product;
 
 @Repository
 public class SupplierProductRepository {

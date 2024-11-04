@@ -3,7 +3,7 @@ package com.fier.products.modules.suppliers.controllers;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fier.products.modules.models.entity.Product;
+import com.fier.products.modules.models.entity.products.Product;
 import com.fier.products.modules.suppliers.services.SupplierProductService;
 
 import java.util.List;
