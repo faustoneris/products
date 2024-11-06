@@ -29,6 +29,16 @@ public class ProductsService {
     }
 
     public boolean createFeedbacks(String productId, Feedback feedback) {
-        return this.productRepository.createFeedback(productId, feedback);
+        if (productId == null || productId.isEmpty())
+            throw new Error("Produto inválido.");
+
+        feedback.validate();
+
+        boolean hasInsertedFeedback = this.productRepository.createFeedback(productId, feedback);
+        if (hasInsertedFeedback) {
+            return hasInsertedFeedback;
+        } else {
+            throw new Error("Não foi possível cadastrar o feedback no produto.");
+        }
     }
 }
