@@ -13,7 +13,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
 import com.fier.products.modules.customers.repositories.ProductRepository;
-import com.fier.products.modules.models.entity.Feedback;
+import com.fier.products.modules.models.entity.products.Feedback;
 
 
 @ExtendWith(MockitoExtension.class)
