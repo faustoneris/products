@@ -1,7 +1,7 @@
 package com.fier.products.modules.models.entity;
 
+import java.math.BigDecimal;
 import java.util.List;
-import java.util.UUID;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -12,9 +12,10 @@ public class Product {
     private String id;
     private String name;
     private String document;
-    private int price;
+    private BigDecimal price;
     private String image;
     private String category;
+    private BigDecimal minAuctionPrice;
     private List<Feedback> feedbacks;
     private Specifications specifications;
 
@@ -26,7 +27,7 @@ public class Product {
         return name;
     }
 
-    public int getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
@@ -48,5 +49,9 @@ public class Product {
 
     public String getDocument() {
         return document;
+    }
+
+    public BigDecimal getMinAuctionPrice() {
+        return minAuctionPrice;
     }
 }
