@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.fier.products.modules.models.entity.Feedback;
-import com.fier.products.modules.models.entity.Product;
+import com.fier.products.modules.models.entity.products.Feedback;
+import com.fier.products.modules.models.entity.products.Product;
 
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;

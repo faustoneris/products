@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.fier.products.modules.customers.services.ProductsService;
-import com.fier.products.modules.models.entity.Feedback;
-import com.fier.products.modules.models.entity.Product;
+import com.fier.products.modules.models.entity.products.Feedback;
+import com.fier.products.modules.models.entity.products.Product;
 
 @RestController
 @RequestMapping("/customer/products")

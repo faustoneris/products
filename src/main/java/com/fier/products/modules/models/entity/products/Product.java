@@ -1,4 +1,4 @@
-package com.fier.products.modules.models.entity;
+package com.fier.products.modules.models.entity.products;
 
 import java.math.BigDecimal;
 import java.util.List;

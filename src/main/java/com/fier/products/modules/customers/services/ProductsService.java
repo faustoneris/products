@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.fier.products.modules.customers.repositories.ProductRepository;
-import com.fier.products.modules.models.entity.Feedback;
-import com.fier.products.modules.models.entity.Product;
+import com.fier.products.modules.models.entity.products.Feedback;
+import com.fier.products.modules.models.entity.products.Product;
 
 @Service
 public class ProductsService {
