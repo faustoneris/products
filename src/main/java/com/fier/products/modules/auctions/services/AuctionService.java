@@ -1,5 +1,7 @@
 package com.fier.products.modules.auctions.services;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.fier.products.modules.auctions.repositories.AuctionRepository;
@@ -16,7 +18,10 @@ public class AuctionService {
     }
 
     public void createAuction(Auction auction) {
-        // auction.validate();
         this.auctionRepository.createAuction(auction);
+    }
+
+    public List<Auction> fetchProductsBySupplier(String document) {
+        return this.auctionRepository.fetchAuctionBySupplier(document);
     }
 }
