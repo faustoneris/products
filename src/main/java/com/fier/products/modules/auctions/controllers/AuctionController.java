@@ -11,8 +11,6 @@ import com.fier.products.modules.auctions.services.AuctionService;
 import com.fier.products.modules.models.entity.auctions.Auction;
 import java.util.List;
 
-
-
 @RestController
 @RequestMapping("auctions")
 public class AuctionController {
