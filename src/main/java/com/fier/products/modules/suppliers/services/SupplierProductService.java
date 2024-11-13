@@ -23,6 +23,10 @@ public class SupplierProductService {
         return this.supplierRepository.createProduct(product);
     }
 
+    public boolean updateProduct(String productId, Product product) {
+        return this.supplierRepository.updateProduct(productId, product);
+    }
+
     public void deleteProduct(String productId) {
         this.supplierRepository.deleteProduct(productId);
     }
