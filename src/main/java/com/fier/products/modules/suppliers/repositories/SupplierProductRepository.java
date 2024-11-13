@@ -34,13 +34,13 @@ public class SupplierProductRepository {
             .addCriteria(Criteria.where("_id").is(productId));
 
         var update = new Update()
-            .addToSet("name", product.getName())
-            .addToSet("document", product.getDocument())
-            .addToSet("price", product.getPrice())
-            .addToSet("image", product.getImage())
-            .addToSet("category", product.getCategory())
-            .addToSet("minAuctionPrice", product.getMinAuctionPrice())
-            .addToSet("specifications", product.getSpecifications());
+            .set("name", product.getName())
+            .set("document", product.getDocument())
+            .set("price", product.getPrice())
+            .set("image", product.getImage())
+            .set("category", product.getCategory())
+            .set("minAuctionPrice", product.getMinAuctionPrice())
+            .set("specifications", product.getSpecifications());
 
         var updated = this.mongoTemplate.updateFirst(query, update, Product.class);
 
