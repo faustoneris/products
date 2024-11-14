@@ -1,6 +1,7 @@
 package com.fier.products.modules.auctions.controllers;
 
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,18 +26,17 @@ public class AuctionController {
         return this.auctionService.fetchProductsBySupplier(document);
     }
 
-
     @PostMapping()
     public void createAuction(@RequestBody Auction auctionModel) {
         this.auctionService.createAuction(auctionModel);
     }
 
-    @PostMapping("supplier/accept/{productId}")
+    @PutMapping("supplier/accept/{productId}")
     public boolean acceptAuctionPropose(@PathVariable String productId) {
         return this.auctionService.acceptAuctionPropose(productId);
     }
 
-    @PostMapping("supplier/refused/{productId}")
+    @PutMapping("supplier/refused/{productId}")
     public boolean refusedAuctionPropose(@PathVariable String productId) {
         return this.auctionService.refusedAuctionPropose(productId);
     }
