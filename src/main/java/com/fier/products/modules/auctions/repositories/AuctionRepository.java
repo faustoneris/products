@@ -27,7 +27,7 @@ public class AuctionRepository {
 
     public List<Auction> fetchAuctionBySupplier(String document) {
          var query = new Query()
-            .addCriteria(Criteria.where("document").is(document));
+            .addCriteria(Criteria.where("supplierDocument").is(document));
         return this.mongoTemplate.find(query, Auction.class);
     }
 
