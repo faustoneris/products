@@ -1,7 +1,14 @@
-// package com.fier.products.proxys.emails;
-// import org.springframework.cloud.openfeign.FeignClient;
+package com.fier.products.proxys.emails;
 
-// @FeignClient(name = "beneficiarioAPI", url = "${gestaoidentidade-api.server}")
-// public interface Email {
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
-// }
+import com.fier.products.modules.models.entity.products.Product;
+
+@FeignClient(name = "emails-api", url = "${emails}")
+public interface Email {
+
+    @PostMapping(path = "api/{email}")
+    void sendEmailToUser(@RequestBody Product product);
+}

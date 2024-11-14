@@ -11,8 +11,10 @@ public class Auction {
     private double auctionMinimumPrice;
     private double auctionPrice;
     private String productId;
+    private String supplierDocument;
     private AuctionOwner auctionOwner;
     private int quantityProduct;
+    private AuctionStatus status;
 
     public double getAuctionMinimumPrice() {
         return auctionMinimumPrice;
@@ -34,8 +36,20 @@ public class Auction {
         return productId;
     }
 
+    public String getSupplierDocument() {
+        return supplierDocument;
+    }
+
     public int getQuantityProduct() {
         return quantityProduct;
+    }
+
+    public AuctionStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(AuctionStatus status) {
+        this.status = status;
     }
 
 

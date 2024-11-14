@@ -6,6 +6,8 @@ import java.util.List;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.fier.products.modules.models.entity.auctions.AuctionStatus;
+
 @Document("Products")
 public class Product {
     @Id
@@ -16,6 +18,7 @@ public class Product {
     private String image;
     private String category;
     private BigDecimal minAuctionPrice;
+    private AuctionStatus auctionStatus;
     private List<Feedback> feedbacks;
     private Specifications specifications;
 
@@ -49,6 +52,10 @@ public class Product {
 
     public String getDocument() {
         return document;
+    }
+
+    public AuctionStatus getAuctionStatus() {
+        return auctionStatus;
     }
 
     public BigDecimal getMinAuctionPrice() {

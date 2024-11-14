@@ -30,4 +30,15 @@ public class AuctionController {
     public void createAuction(@RequestBody Auction auctionModel) {
         this.auctionService.createAuction(auctionModel);
     }
+
+    @PostMapping("supplier/accept/{productId}")
+    public boolean acceptAuctionPropose(@PathVariable String productId) {
+        return this.auctionService.acceptAuctionPropose(productId);
+    }
+
+    @PostMapping("supplier/refused/{productId}")
+    public boolean refusedAuctionPropose(@PathVariable String productId) {
+        return this.auctionService.refusedAuctionPropose(productId);
+    }
+
 }

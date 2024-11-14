@@ -7,8 +7,10 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.stereotype.Repository;
 
 import com.fier.products.modules.models.entity.auctions.Auction;
+import com.fier.products.modules.models.entity.auctions.AuctionStatus;
 
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 
 @Repository
 public class AuctionRepository {
@@ -19,6 +21,7 @@ public class AuctionRepository {
     }
 
     public void createAuction(Auction auction) {
+        auction.setStatus(AuctionStatus.WAITING);
         this.mongoTemplate.save(auction);
     }
 
@@ -26,6 +29,24 @@ public class AuctionRepository {
          var query = new Query()
             .addCriteria(Criteria.where("document").is(document));
         return this.mongoTemplate.find(query, Auction.class);
+    }
+
+    public boolean acceptAuctionPropose(String productId) {
+        var query = new Query()
+            .addCriteria(Criteria.where("productId").is(productId));
+        var update = new Update()
+            .set("status", AuctionStatus.ACCEPT);
+        var updated = this.mongoTemplate.updateFirst(query, update, Auction.class);
+        return updated.getModifiedCount() > 0;
+    }
+
+    public boolean refusedAuctionPropose(String productId) {
+        var query = new Query()
+            .addCriteria(Criteria.where("productId").is(productId));
+        var update = new Update()
+            .set("status", AuctionStatus.REFUSED);
+        var updated = this.mongoTemplate.updateFirst(query, update, Auction.class);
+        return updated.getModifiedCount() > 0;
     }
 
 }
