@@ -41,6 +41,14 @@ public class AuctionService {
     public boolean acceptAuctionPropose(String productId) {
         var hasRefused = this.auctionRepository.acceptAuctionPropose(productId);
         if (hasRefused) {
+            var auction = this.auctionRepository.fetchAuctionByProductId(productId);
+            var product = this.productRepository.fetchProductById(productId);
+            this.emails.sendEmailToUser(EmailModel.of(
+                auction.getAuctionOwner().getName(),
+                product.getName(),
+                auction.getAuctionPrice(),
+                auction.getAuctionOwner().getEmail(),
+                AuctionStatus.ACCEPT));
             return this.productRepository.changeProductAuctionStatus(productId, AuctionStatus.ACCEPT);
         }
         return false;
