@@ -1,5 +1,7 @@
 package com.fier.products.modules.models.entity.auctions;
 
+import java.math.BigDecimal;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -8,15 +10,15 @@ public class Auction {
 
     @Id
     private String id;
-    private double auctionMinimumPrice;
-    private double auctionPrice;
+    private BigDecimal auctionMinimumPrice;
+    private BigDecimal auctionPrice;
     private String productId;
     private String supplierDocument;
     private AuctionOwner auctionOwner;
     private int quantityProduct;
     private AuctionStatus status;
 
-    public double getAuctionMinimumPrice() {
+    public BigDecimal getAuctionMinimumPrice() {
         return auctionMinimumPrice;
     }
 
@@ -24,7 +26,7 @@ public class Auction {
         return auctionOwner;
     }
 
-    public double getAuctionPrice() {
+    public BigDecimal getAuctionPrice() {
         return auctionPrice;
     }
 

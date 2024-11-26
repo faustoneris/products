@@ -4,11 +4,11 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.fier.products.modules.models.entity.products.Product;
+import com.fier.products.modules.models.entity.emails.EmailModel;
 
-@FeignClient(name = "emails-api", url = "${emails}")
+@FeignClient(name = "emailsApi", url = "${email}")
 public interface Email {
 
-    @PostMapping(path = "api/{email}")
-    void sendEmailToUser(@RequestBody Product product);
+    @PostMapping(path = "")
+    void sendEmailToUser(@RequestBody EmailModel email);
 }

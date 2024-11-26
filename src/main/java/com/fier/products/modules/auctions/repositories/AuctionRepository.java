@@ -31,6 +31,12 @@ public class AuctionRepository {
         return this.mongoTemplate.find(query, Auction.class);
     }
 
+    public Auction fetchAuctionByProductId(String productId) {
+        var query = new Query()
+           .addCriteria(Criteria.where("productId").is(productId));
+       return this.mongoTemplate.findOne(query, Auction.class);
+   }
+
     public boolean acceptAuctionPropose(String productId) {
         var query = new Query()
             .addCriteria(Criteria.where("productId").is(productId));
